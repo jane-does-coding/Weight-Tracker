@@ -1,4 +1,5 @@
-# CityBizScout
+# Weight Tracker
 
 ## Description
-A website for finding local buissnesses near you
+
+A website for looking at your weight
