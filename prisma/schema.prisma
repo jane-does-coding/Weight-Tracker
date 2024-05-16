@@ -14,6 +14,16 @@ model User {
   hashedPassword String
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
-  favoriteIds    String[] @db.ObjectId
+  entries        Entry[]
+
 }
 
+model Entry {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  date       DateTime @default(now())
+  weight     Float
+  waistSize  Float?
+  hipSize    Float?
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+}
