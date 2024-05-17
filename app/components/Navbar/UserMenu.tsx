@@ -7,6 +7,7 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 import { User } from "@prisma/client";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { MdOutlineWorkspaces } from "react-icons/md";
 
 const UserMenu = ({ currentUser }: { currentUser?: User | null }) => {
   const registerModal = useRegisterModal();
@@ -26,7 +27,7 @@ const UserMenu = ({ currentUser }: { currentUser?: User | null }) => {
           className="p-4 md:py-3 md:px-3 transition flex flex-row  items-center gap-3 rounded-full cursor-pointer hover:bg-slate-900/50 text-white"
           onClick={toggleOpen}
         >
-          <AiOutlineMenu size={24} />
+          <MdOutlineWorkspaces size={24} />
         </div>
       </div>
 
