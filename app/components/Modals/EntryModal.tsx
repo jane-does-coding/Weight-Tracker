@@ -128,7 +128,7 @@ const EntryModal = () => {
 
 	const footerContent = (
 		<div className="flex flex-col text-center items-center justify-center py-1 pt-3 relative">
-			<p className="flex flex-row gap-2">Don't give up on your goals!</p>
+			<p className="flex flex-row gap-2">Don&apos;t give up on your goals!</p>
 		</div>
 	);
 

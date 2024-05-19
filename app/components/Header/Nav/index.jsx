@@ -30,7 +30,7 @@ export const no_user_links = [
 	},
 ];
 
-export default function index({ currentUser }) {
+export default function Index({ currentUser }) {
 	const registerModal = useRegisterModal();
 	const loginModal = useLoginModal();
 	const entryModal = useEntryModal();
@@ -76,7 +76,7 @@ export default function index({ currentUser }) {
 								exit="exit"
 								onClick={() => entryModal.onOpen()}
 							>
-								<a>Today's Entry</a>
+								<a>Today&apos;s Entry</a>
 							</motion.button>
 						</div>
 						<div className={`my-2`}>

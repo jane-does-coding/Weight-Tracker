@@ -6,7 +6,9 @@ import toast from "react-hot-toast";
 import axios from "axios";
 
 const Page = () => {
-	const [data, setData] = useState("");
+	const [data, setData] = useState({
+		weight: 0,
+	});
 	const router = useRouter();
 	const [title, setTitle] = useState("");
 
@@ -19,7 +21,7 @@ const Page = () => {
 		setTitle("");
 
 		try {
-			const response = await axios.post("/api/todos", { title });
+			const response = await axios.post("/api/entry", { title });
 			const data = response.data;
 
 			console.log(response, data);
@@ -44,21 +46,35 @@ const Page = () => {
 	return (
 		<div className="mt-32">
 			<h1 className="text-center text-neutral-100 mb-10 jura text-[3rem]">
-				Brain Dump
+				Today's Entry
 			</h1>
 			<div className=" flex gap-4">
 				<input
 					type="text"
 					value={title}
 					onChange={handleChange}
-					placeholder="Enter todo title"
+					placeholder="Weight"
+					className="px-8 py-3 rounded-full bg-neutral-800 text-white text-[1.5rem] xl:text-[1.75rem] w-2/3"
+				/>
+				<input
+					type="text"
+					value={title}
+					onChange={handleChange}
+					placeholder="Waist"
+					className="px-8 py-3 rounded-full bg-neutral-800 text-white text-[1.5rem] xl:text-[1.75rem] w-2/3"
+				/>
+				<input
+					type="text"
+					value={title}
+					onChange={handleChange}
+					placeholder="Hip"
 					className="px-8 py-3 rounded-full bg-neutral-800 text-white text-[1.5rem] xl:text-[1.75rem] w-2/3"
 				/>
 				<button
 					onClick={handleSubmit}
 					className="bg-black text-white w-1/3 flex items-center justify-center rounded-full border-[1px] border-neutral-500"
 				>
-					Add Todo
+					Add Entry
 				</button>
 			</div>
 		</div>
