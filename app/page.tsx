@@ -46,7 +46,7 @@ const Page = () => {
 	return (
 		<div className="mt-32">
 			<h1 className="text-center text-neutral-100 mb-10 jura text-[3rem]">
-				Today's Entry
+				Today&apos;s Entry
 			</h1>
 			<div className=" flex gap-4">
 				<input
