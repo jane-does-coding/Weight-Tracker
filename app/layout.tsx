@@ -36,7 +36,7 @@ export default async function RootLayout({
 				></link>
 			</head>
 			<body className={`${inter.className} bg-neutral-900`}>
-				<Header />
+				<Header currentUser={currentUser} />
 				<ToasterProvider />
 				<RegisterModal />
 				<LoginModal />

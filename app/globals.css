@@ -70,3 +70,16 @@
 		@apply disabled:checked:before:bg-opacity-40;
 	}
 }
+
+select {
+	background-color: #27272a !important;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-color: transparent;
+	border: none;
+	padding: 0.5rem;
+	font-size: 1rem;
+	cursor: pointer;
+	height: 100%;
+}
