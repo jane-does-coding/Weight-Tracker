@@ -1,0 +1,39 @@
+.nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-bottom: 2rem;
+	padding-top: 3rem;
+	height: 100%;
+	box-sizing: border-box;
+	z-index: 999;
+	.body {
+		display: flex;
+		gap: 0.75rem;
+		width: 100%;
+		flex-direction: column;
+		.linkContainer {
+			perspective: 120px;
+			perspective-origin: bottom;
+			width: 100%;
+		}
+		a {
+			text-decoration: none;
+			color: rgb(36, 36, 36);
+			font-size: 30px;
+			padding: 0.5rem 2rem;
+			transition: 0.25s;
+		}
+		a:hover {
+			color: rgb(0, 0, 0);
+		}
+	}
+	.footer {
+		display: flex;
+		flex-wrap: wrap;
+		a {
+			width: 50%;
+			margin-top: 5px;
+		}
+	}
+}

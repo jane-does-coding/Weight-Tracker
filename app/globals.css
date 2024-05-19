@@ -19,6 +19,13 @@
 	font-weight: normal;
 	text-rendering: optimizeLegibility;
 }
+@font-face {
+	font-family: "Dx Aiter";
+	src: url("../public/fonts/Free\ Demo\ Font/Aiter.otf") format("opentype"); /* Safari, Android, iOS */
+	font-style: normal;
+	font-weight: normal;
+	text-rendering: optimizeLegibility;
+}
 
 .milky-walky {
 	font-family: "MilkyWalky" !important;
