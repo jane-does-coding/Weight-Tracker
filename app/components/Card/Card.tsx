@@ -1,33 +1,23 @@
 "use client";
-import Link from "next/link";
-import { IoLocationOutline } from "react-icons/io5";
+import React from "react";
+import { PinContainer } from "../ui/3d-pin";
 
-const Card = ({
-  img,
-  title,
-  location,
-  link,
-}: {
-  img: string;
-  title: string;
-  location: string;
-  link: string;
-}) => {
-  return (
-    <Link
-      href={`/search/${link}`}
-      className="w-full bg-white h-[40vh] rounded-[1rem] overflow-hidden relative"
-    >
-      <img src={img} alt="" className="h-full w-full object-fit" />
-      <div className="absolute bottom-2 mx-auto w-[95%] ml-[2.5%] z-[2] bg-white/[40%] py-2 text-center rounded-md backdrop-blur-md">
-        <label className=" text-slate-900 font-semibold text-md">{title}</label>
-        <div className="flex items-center justify-center text-[0.65rem]">
-          <IoLocationOutline size={20} />
-          {location}
-        </div>
-      </div>
-    </Link>
-  );
-};
-
-export default Card;
+export function AnimatedPinDemo() {
+	return (
+		<div className="h-[40rem] w-full flex items-center justify-center ">
+			<PinContainer title="The key in your journey" href="/dashboard">
+				<div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
+					<h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
+						Aceternity UI
+					</h3>
+					<div className="text-base !m-0 !p-0 font-normal">
+						<span className="text-slate-500 ">
+							Customizable Tailwind CSS and Framer Motion Components.
+						</span>
+					</div>
+					<div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" />
+				</div>
+			</PinContainer>
+		</div>
+	);
+}
