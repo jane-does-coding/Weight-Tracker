@@ -11,6 +11,34 @@ const Entry = ({
 	metricCm: boolean;
 	compactView: boolean;
 }) => {
+	function getMonthAndDay(dateString: any) {
+		// Convert the date string to a Date object
+		const date = new Date(dateString);
+
+		// Define an array of month names
+		const monthNames = [
+			"January",
+			"February",
+			"March",
+			"April",
+			"May",
+			"June",
+			"July",
+			"August",
+			"September",
+			"October",
+			"November",
+			"December",
+		];
+
+		// Get the month and day
+		const month = monthNames[date.getUTCMonth()]; // getUTCMonth() returns 0-11
+		const day = date.getUTCDate();
+
+		// Return the formatted month and day
+		return `${month} ${day}`;
+	}
+
 	const calculateWeight = () => {
 		if (metricKg) {
 			return `${entry.weight} kg`;
@@ -41,7 +69,7 @@ const Entry = ({
 				Entry {entry.num}
 			</div>
 			<div className="flex items-center justify-center p-2 px-4 border-r-[0px]  border-neutral-600 rounded-none w-fit">
-				{entry.date}
+				{getMonthAndDay(entry.date)}
 			</div>
 			<div className="p-2 px-4 font-light flex gap-3 items-center justify-center border-r-[0px]  border-neutral-600 rounded-none w-fit ml-auto">
 				Weight:

@@ -22,8 +22,8 @@ model Entry {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
   date       DateTime @default(now())
   weight     Float
-  waistSize  Float?
-  hipSize    Float?
+  waist      Float?
+  hip         Float?
   userId     String
   user       User     @relation(fields: [userId], references: [id])
 }

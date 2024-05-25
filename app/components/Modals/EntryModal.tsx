@@ -7,7 +7,6 @@ import Modal from "./Modal";
 import Heading from "../Heading";
 import Input from "../Inputs/Input";
 import toast from "react-hot-toast";
-import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import useEntryModal from "@/app/hooks/useEntryModal";
 
@@ -49,13 +48,25 @@ const EntryModal = () => {
 		return convertedData;
 	};
 
-	const onSubmit: SubmitHandler<FieldValues> = (data) => {
+	const onSubmit: SubmitHandler<FieldValues> = async (data) => {
 		setIsLoading(true);
-
 		const convertedData = convertToKgAndCm(data);
-		console.log(convertedData);
 
-		setIsLoading(false);
+		try {
+			const response = await axios.post("/api/entry", convertedData);
+			const responseData = response.data;
+
+			console.log("Entry created with ID:", responseData.id);
+
+			toast.success("Entry Created");
+			entryModal.onClose();
+			router.refresh();
+		} catch (error) {
+			console.error("Error creating entry:", error);
+			toast.error("Error creating entry");
+		} finally {
+			setIsLoading(false);
+		}
 	};
 
 	const switchModal = () => {
@@ -127,8 +138,8 @@ const EntryModal = () => {
 	);
 
 	const footerContent = (
-		<div className="flex flex-col text-center items-center justify-center py-1 pt-3 relative">
-			<p className="flex flex-row gap-2">Don&apos;t give up on your goals!</p>
+		<div className="flex flex-col text-center items-center justify-center py-1 pt-3 relative text-sm">
+			If the entry for today already exists, it will be updated
 		</div>
 	);
 

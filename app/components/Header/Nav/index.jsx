@@ -6,6 +6,7 @@ import useRegisterModal from "@/app/hooks/useRegisterModal";
 import { signOut } from "next-auth/react";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import useEntryModal from "@/app/hooks/useEntryModal";
+import { useRouter } from "next/navigation";
 
 export const no_user_links = [
 	{
@@ -34,6 +35,7 @@ export default function Index({ currentUser }) {
 	const registerModal = useRegisterModal();
 	const loginModal = useLoginModal();
 	const entryModal = useEntryModal();
+	const router = useRouter();
 
 	return (
 		<div className={styles.nav}>
@@ -99,7 +101,10 @@ export default function Index({ currentUser }) {
 								initial="initial"
 								animate="enter"
 								exit="exit"
-								onClick={() => signOut()}
+								onClick={() => {
+									router.push("/");
+									signOut();
+								}}
 							>
 								<a href={"/"}>Logout</a>
 							</motion.button>
