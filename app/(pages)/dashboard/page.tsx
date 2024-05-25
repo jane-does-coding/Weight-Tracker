@@ -4,7 +4,7 @@ import React from "react";
 
 const page = async () => {
 	const entries = await getEntries();
-	console.log(entries);
+
 	return (
 		<div>
 			<MainGrid entries={entries} />

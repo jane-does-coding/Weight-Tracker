@@ -5,11 +5,13 @@ const Entry = ({
 	metricKg,
 	metricCm,
 	compactView,
+	index,
 }: {
 	entry: any;
 	metricKg: boolean;
 	metricCm: boolean;
 	compactView: boolean;
+	index: number;
 }) => {
 	function getMonthAndDay(dateString: any) {
 		// Convert the date string to a Date object
@@ -66,7 +68,7 @@ const Entry = ({
 			} transition flex gap-2 w-full border-neutral-600 border-b-[1.5px] text-white px-4`}
 		>
 			<div className="flex items-center justify-center p-2 px-4 border-r-[0px]  border-neutral-600 rounded-none w-fit">
-				Entry {entry.num}
+				Entry {index + 1}
 			</div>
 			<div className="flex items-center justify-center p-2 px-4 border-r-[0px]  border-neutral-600 rounded-none w-fit">
 				{getMonthAndDay(entry.date)}

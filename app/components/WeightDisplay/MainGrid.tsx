@@ -24,6 +24,11 @@ const MainGrid = ({ entries: userEntries }: any) => {
 
 	const entryModal = useEntryModal();
 
+	// Sort entries in descending order by creation date
+	const sortedEntries = [...userEntries].sort(
+		(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+	);
+
 	return (
 		<motion.div className="flex flex-col w-[90%] mx-auto p-4 gap-0 text-white">
 			<div className="flex flex-col">
@@ -86,7 +91,7 @@ const MainGrid = ({ entries: userEntries }: any) => {
 					</div>
 				</motion.div>
 			</div>
-			{userEntries.length == 0 ? (
+			{sortedEntries.length == 0 ? (
 				<h1 className="text-5xl milky-walky text-center mx-auto my-4">
 					No Entries
 				</h1>
@@ -99,7 +104,7 @@ const MainGrid = ({ entries: userEntries }: any) => {
 						compactView ? "py-2" : "gap-0"
 					}`}
 				>
-					{userEntries.map((entry: any, i: number) => (
+					{sortedEntries.map((entry: any, i: number) => (
 						<motion.div
 							initial={{ opacity: 0, y: 50 }}
 							animate={{ opacity: 1, y: 0 }}
@@ -112,6 +117,7 @@ const MainGrid = ({ entries: userEntries }: any) => {
 								metricKg={metricKg}
 								compactView={compactView}
 								metricCm={metricCm}
+								index={i}
 							/>
 						</motion.div>
 					))}
