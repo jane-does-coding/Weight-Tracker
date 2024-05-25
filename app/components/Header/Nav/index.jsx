@@ -101,12 +101,9 @@ export default function Index({ currentUser }) {
 								initial="initial"
 								animate="enter"
 								exit="exit"
-								onClick={() => {
-									router.push("/");
-									signOut();
-								}}
+								onClick={() => signOut()}
 							>
-								<a href={"/"}>Logout</a>
+								<a>Logout</a>
 							</motion.button>
 						</div>
 					</div>
