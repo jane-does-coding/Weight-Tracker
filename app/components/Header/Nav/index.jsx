@@ -90,7 +90,7 @@ export default function Index({ currentUser }) {
 								animate="enter"
 								exit="exit"
 							>
-								<a href={"/"}>{currentUser.name}</a>
+								<a href={"/profile"}>Profile</a>
 							</motion.button>
 						</div>
 						<div className={`my-2`}>
@@ -138,7 +138,7 @@ export default function Index({ currentUser }) {
 						<div className={`my-2`}>
 							<motion.button
 								href={"/"}
-								custom={1}
+								custom={2}
 								variants={perspective}
 								initial="initial"
 								animate="enter"
@@ -151,7 +151,7 @@ export default function Index({ currentUser }) {
 						<div className={`my-2`}>
 							<motion.button
 								href={"/"}
-								custom={1}
+								custom={3}
 								variants={perspective}
 								initial="initial"
 								animate="enter"
@@ -164,7 +164,7 @@ export default function Index({ currentUser }) {
 						<div className={`my-2`}>
 							<motion.button
 								href={"/"}
-								custom={1}
+								custom={4}
 								variants={perspective}
 								initial="initial"
 								animate="enter"

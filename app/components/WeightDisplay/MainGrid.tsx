@@ -36,7 +36,7 @@ const MainGrid = ({ entries: userEntries }: any) => {
 					initial={{ opacity: 0, y: 100 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.4 }}
-					className="text-7xl milky-walky opacity-0 text-white text-center w-fit mx-auto jura my-6 mb-0 relative"
+					className="text-7xl milky-walky opacity-0 text-white text-center w-fit mx-auto jura my-6 mb-6 relative"
 				>
 					Entry History
 					<button
@@ -117,7 +117,7 @@ const MainGrid = ({ entries: userEntries }: any) => {
 								metricKg={metricKg}
 								compactView={compactView}
 								metricCm={metricCm}
-								index={i}
+								index={sortedEntries.length - 1 - i}
 							/>
 						</motion.div>
 					))}
