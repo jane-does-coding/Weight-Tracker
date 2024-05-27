@@ -9,7 +9,6 @@ export const HoverEffect = ({
 	items: {
 		title: string;
 		description: string;
-		link: string;
 		detailedContent: {
 			title: string;
 			description: string;
@@ -88,8 +87,8 @@ export const Card = ({
 		<>
 			{showMore && (
 				<div className="w-full h-screen bg-neutral-800/50 backdrop-blur-lg fixed top-0 left-0 z-30">
-					<div className="w-[60vw] h-[80vh] p-8 fixed bg-black/50 backdrop-blur-lg rounded-2xl top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] px-[7vw] py-[7vh]">
-						<div className="text-neutral-400">
+					<div className="w-[55vw] h-[75vh] p-8 fixed bg-black/50  overflow-auto backdrop-blur-xl rounded-2xl top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] px-[7vw] py-[7vh]">
+						<div className="text-neutral-400 overflow-auto">
 							<h1 className="text-6xl mb-6 milky-walky text-center text-neutral-300">
 								{showMoreContent.title}
 							</h1>
@@ -109,8 +108,9 @@ export const Card = ({
 					"rounded-2xl h-[40vh] w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
 					className
 				)}
+				onClick={() => setShowMore(cardIndex)}
 			>
-				<div className="relative z-50 " onClick={() => setShowMore(cardIndex)}>
+				<div className="relative z-50" onClick={() => setShowMore(cardIndex)}>
 					<div className="p-4">{children}</div>
 				</div>
 			</div>
