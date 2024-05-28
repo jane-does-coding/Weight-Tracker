@@ -30,18 +30,18 @@ const MainGrid = ({ entries: userEntries }: any) => {
 	);
 
 	return (
-		<motion.div className="flex flex-col w-[90%] mx-auto p-4 gap-0 text-white">
+		<motion.div className="flex flex-col w-[98%] md:w-[95%] xl:w-[90%] mx-auto p-1 md:p-4 gap-0 text-white">
 			<div className="flex flex-col">
 				<motion.h1
 					initial={{ opacity: 0, y: 100 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.4 }}
-					className="text-7xl milky-walky opacity-0 text-white text-center w-fit mx-auto jura my-6 mb-6 relative"
+					className=" text-6xl mt-14 md:mt-6 md:text-7xl milky-walky opacity-0 text-white text-center w-fit mx-auto jura my-6 mb-6 relative"
 				>
 					Entry History
 					<button
 						onClick={() => entryModal.onOpen()}
-						className="absolute top-[50%] translate-y-[-50%] right-[-5rem] centrion"
+						className="absolute top-[50%] translate-y-[-50%] right-[1rem] md:right-[-5rem] centrion"
 					>
 						+
 					</button>
@@ -51,9 +51,9 @@ const MainGrid = ({ entries: userEntries }: any) => {
 					initial={{ opacity: 0, y: 100 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.4, delay: 0.2 }}
-					className="flex space-x-2 gap-0"
+					className="flex flex-col md:flex-row items-center justify-center space-x-2 gap-0"
 				>
-					<div className="m-6 flex gap-3 border-r-2 border-neutral-600 py-2 pr-8">
+					<div className="m-2 md:m-6 flex gap-1 md:gap-3 border-0 md:border-r-2 border-neutral-600 py-2 pr-8">
 						Lbs
 						<label htmlFor="weightToggle">
 							<input
@@ -65,7 +65,7 @@ const MainGrid = ({ entries: userEntries }: any) => {
 						</label>
 						Kgs
 					</div>
-					<div className="m-6 flex gap-3 border-r-2 border-neutral-600 py-2 pr-8">
+					<div className="m-2 md:m-6 flex gap-3 border-0 md:border-r-2 border-neutral-600 py-2 pr-8">
 						Inch
 						<label htmlFor="lengthToggle">
 							<input
@@ -77,7 +77,7 @@ const MainGrid = ({ entries: userEntries }: any) => {
 						</label>
 						Cm
 					</div>
-					<div className="m-6 flex gap-3 py-2 pl-6">
+					<div className="m-2 md:m-6 flex gap-3 py-2 pl-0 md:pl-6">
 						Compact
 						<label htmlFor="viewModeToggle">
 							<input
@@ -100,8 +100,10 @@ const MainGrid = ({ entries: userEntries }: any) => {
 					initial={{ opacity: 0, y: 100 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5, delay: 0.1 }}
-					className={`bg-neutral-800/75 flex flex-col ${
-						compactView ? "py-2" : "gap-0"
+					className={`bg-neutral-800/75 flex flex-col mt-8 ${
+						compactView
+							? "py-0 xl:py-2 px-0 md:px-2"
+							: "gap-0 px-0 md:px-4 py-2 md:py-4"
 					}`}
 				>
 					{sortedEntries.map((entry: any, i: number) => (

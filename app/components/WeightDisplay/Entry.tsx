@@ -64,30 +64,30 @@ const Entry = ({
 	return (
 		<div
 			className={`${
-				compactView ? "p-0" : "p-[10px]"
+				compactView ? "p-0 xl:p-[2px]" : "p-0 md:p-[5px] xl:p-[10px]"
 			} transition flex gap-2 w-full border-neutral-600 border-b-[1.5px] text-white px-4`}
 		>
-			<div className="flex items-center justify-center p-2 px-4 border-r-[0px]  border-neutral-600 rounded-none w-fit">
+			<div className="hidden md:flex items-center justify-center p-o md:p-2 md:px-2 lx:px-4 border-r-[0px]  border-neutral-600 rounded-none w-fit">
 				Entry {index + 1}
 			</div>
 			<div className="flex items-center justify-center p-2 px-4 border-r-[0px]  border-neutral-600 rounded-none w-fit">
 				{getMonthAndDay(entry.date)}
 			</div>
-			<div className="p-2 px-4 font-light flex gap-3 items-center justify-center border-r-[0px]  border-neutral-600 rounded-none w-fit ml-auto">
+			<div className="p-2 px-3 xl:px-4 font-light flex gap-3 items-center justify-center border-r-[0px]  border-neutral-600 rounded-none w-fit ml-auto">
 				Weight:
-				<span className="text-sm rounded-full p-2 px-4 text-black font-bold bg-red-400">
+				<span className="text-sm rounded-full p-2 px-3 xl:px-4 text-black font-bold bg-red-400">
 					{calculateWeight()}
 				</span>
 			</div>
-			<div className="p-2 px-4 font-light flex gap-3 items-center justify-center border-r-[0px]  border-neutral-600 rounded-none w-fit">
+			<div className="hidden md:flex p-2 px-3 xl:px-4 font-light gap-3 items-center justify-center border-r-[0px]  border-neutral-600 rounded-none w-fit">
 				Waist:
-				<span className="text-sm rounded-full p-2 px-4 text-black font-bold bg-amber-400">
+				<span className="text-sm rounded-full p-2 px-3 xl:px-4 text-black font-bold bg-amber-400">
 					{calculateLength(entry.waist)}
 				</span>
 			</div>
-			<div className="p-2  font-light flex gap-3 items-center justify-center rounded-none w-fit">
+			<div className="hidden md:flex p-2  font-light gap-3 items-center justify-center rounded-none w-fit">
 				Hip:
-				<span className="text-sm rounded-full p-2 px-4 text-black font-bold bg-yellow-300">
+				<span className="text-sm rounded-full p-2 px-3 xl:px-4 text-black font-bold bg-yellow-300">
 					{calculateLength(entry.hip)}
 				</span>
 			</div>

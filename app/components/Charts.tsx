@@ -186,13 +186,13 @@ const Charts: React.FC<{
 	};
 
 	return (
-		<div className="bg-neutral-900 mt-0 p-[1rem] w-[85vw] px-[10vw] rounded-xl">
-			<div className="flex justify-between items-center space-x-4 mb-4">
-				<div className="flex text-neutral-400 gap-4">
+		<div className="bg-neutral-900 mt-0 p-[1rem] w-[95vw] md:w-[85vw] px-[2.5vw] md:px-[7.5vw] rounded-xl">
+			<div className="flex flex-col md:flex-row justify-between items-center space-x-4 mb-4">
+				<div className="hidden xl:flex text-neutral-400 gap-4">
 					<IoIosInformationCircleOutline size={28} />
 					<p className="text-neutral-400 text-xl">Click on the label to hide</p>
 				</div>
-				<div className="w-fit flex">
+				<div className="w-fit flex flex-col md:flex-row">
 					<div className="m-6 flex gap-3 border-r-2 border-neutral-600 text-neutral-300 py-2 pr-8">
 						Imperial
 						<label htmlFor="weightToggle">

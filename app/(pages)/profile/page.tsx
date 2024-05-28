@@ -35,7 +35,7 @@ const page = async () => {
 				{entries && entries.length !== 0 ? (
 					<div className="flex flex-col ">
 						{/* Row 1 */}
-						<div className="flex justify-evenly border-b border-neutral-700 pb-4 mb-4">
+						<div className="flex flex-col md:flex-row justify-evenly border-b border-neutral-700 pb-4 mb-4">
 							<div className="flex flex-col items-start my-2 w-1/3 text-left">
 								<p className="text-lg text-neutral-500 mb-2">Weight:</p>
 								<p className="text-2xl font-bold text-neutral-200 milky-walky">
@@ -56,7 +56,7 @@ const page = async () => {
 							</div>
 						</div>
 						{/* Row 2 */}
-						<div className="flex justify-evenly  border-b border-neutral-700 pb-4 mb-4">
+						<div className="flex flex-col md:flex-row justify-evenly  border-b border-neutral-700 pb-4 mb-4">
 							<div className="flex flex-col items-start my-2 w-1/3 text-left">
 								<p className="text-lg text-neutral-500 mb-2">BMI:</p>
 								<p className="text-2xl font-bold text-neutral-200 milky-walky">
@@ -79,7 +79,7 @@ const page = async () => {
 							</div>
 						</div>
 						{/* Row 3 */}
-						<div className="flex justify-evenly ">
+						<div className="flex flex-col md:flex-row justify-evenly ">
 							<div className="flex flex-col items-start my-2 w-1/3 text-left">
 								<p className="text-lg text-neutral-500 mb-2">Calorie needs:</p>
 								<p className="text-2xl font-bold text-neutral-200 milky-walky">
